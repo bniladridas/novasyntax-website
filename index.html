@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>NovaSyntax - Reimagining Programming Languages</title>
     
     <!-- Favicon -->
@@ -28,6 +28,12 @@
             padding: 0;
             box-sizing: border-box;
             scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         @keyframes backgroundSlide {
@@ -44,13 +50,16 @@
             background-color: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
-            overflow-x: hidden;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
 
         header {
@@ -68,7 +77,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .logo {
@@ -87,10 +98,15 @@
             transform: scale(1.05);
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
         nav a {
             color: var(--text-primary);
             text-decoration: none;
-            margin-left: 30px;
+            margin-left: 20px;
             transition: color 0.3s ease;
             font-weight: 500;
             letter-spacing: 0.5px;
@@ -123,44 +139,38 @@
             pointer-events: none;
         }
 
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            width: 100%;
+        }
+
         .hero h1 {
             font-size: 3.5rem;
             color: var(--text-primary);
             margin-bottom: 20px;
             letter-spacing: 1px;
-            border-left: 4px solid var(--gold-accent);
-            padding-left: 20px;
+            line-height: 1.2;
         }
 
         .hero p {
             font-size: 1.2rem;
             color: rgba(230, 233, 240, 0.8);
             max-width: 600px;
-            margin-bottom: 30px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
         }
 
         .code-window {
             background-color: var(--bg-secondary);
             border-radius: 10px;
             padding: 25px;
-            margin: 30px 0;
+            margin: 30px auto;
+            max-width: 800px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(191, 155, 48, 0.2);
-        }
-
-        .code-window-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(191, 155, 48, 0.2);
-        }
-
-        .code-window-title {
-            color: var(--gold-accent);
-            font-size: 0.9rem;
-            font-weight: 600;
+            overflow-x: auto;
         }
 
         .code-window pre {
@@ -168,6 +178,8 @@
             color: var(--text-primary);
             font-size: 0.9rem;
             line-height: 1.5;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
 
         .btn {
@@ -180,6 +192,7 @@
             transition: all 0.3s ease;
             font-weight: 600;
             letter-spacing: 0.5px;
+            margin: 0 10px;
         }
 
         .btn:hover {
@@ -233,13 +246,85 @@
             color: rgba(230, 233, 240, 0.8);
         }
 
-        @media (max-width: 768px) {
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 1024px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px 0;
+            }
+
+            nav {
+                margin-top: 15px;
+            }
+
+            nav a {
+                margin: 0 10px;
+            }
+
+            .hero {
+                padding-top: 100px;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
 
+            .hero p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+            .code-window {
+                margin: 20px 15px;
+                padding: 15px;
+            }
+
             .feature-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature {
+                padding: 30px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                margin: 0 5px;
+            }
+
+            .logo-svg {
+                width: 100px;
+                height: 50px;
             }
         }
     </style>
@@ -305,9 +390,6 @@
                 <p>NovaSyntax is a cutting-edge programming language designed from the ground up, focusing on simplicity, expressiveness, and modern programming paradigms.</p>
                 
                 <div class="code-window">
-                    <div class="code-window-header">
-                        <span class="code-window-title">Example Code</span>
-                    </div>
                     <pre>
 # Function Declaration
 func add(x, y) {
@@ -321,9 +403,6 @@ let result = add(10, 32)
                 </div>
 
                 <div class="code-window">
-                    <div class="code-window-header">
-                        <span class="code-window-title">C/C++ CI Workflow</span>
-                    </div>
                     <pre>
 name: C/C++ CI
 on:
@@ -340,10 +419,6 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y cmake libgtest-dev
-        cd /usr/src/gtest
-        sudo cmake CMakeLists.txt
-        sudo make
-        sudo cp lib/libgtest.a lib/libgtest_main.a /usr/lib/
     - name: configure
       run: ./configure.sh
     - name: make
