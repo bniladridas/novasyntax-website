@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaSyntax - Reimagining Programming Languages</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --bg-primary: #0f1020;
-            --bg-secondary: #1a1a2e;
-            --text-primary: #e0e0e0;
-            --accent-color: #4a6cf7;
-            --accent-hover: #6b8aff;
+            --bg-primary: #1a1d3f;
+            --bg-secondary: #232857;
+            --text-primary: #e6e9f0;
+            --accent-color: #3b82f6;
+            --accent-hover: #60a5fa;
+            --gold-accent: #bf9b30;
         }
 
         * {
@@ -30,22 +31,10 @@
             overflow-x: hidden;
         }
 
-        .noise-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            opacity: 0.05;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            z-index: 1000;
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
 
         header {
@@ -53,10 +42,10 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(15, 16, 32, 0.9);
+            background-color: rgba(26, 29, 63, 0.95);
             backdrop-filter: blur(10px);
             z-index: 100;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid var(--gold-accent);
         }
 
         .header-content {
@@ -69,19 +58,22 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--accent-color);
+            color: var(--gold-accent);
             text-decoration: none;
+            letter-spacing: 1px;
         }
 
         nav a {
             color: var(--text-primary);
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 30px;
             transition: color 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
         nav a:hover {
-            color: var(--accent-color);
+            color: var(--gold-accent);
         }
 
         .hero {
@@ -90,23 +82,21 @@
             align-items: center;
             background-color: var(--bg-primary);
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
+            padding-top: 80px;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             color: var(--text-primary);
             margin-bottom: 20px;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--gold-accent);
+            padding-left: 20px;
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: rgba(224, 224, 224, 0.7);
+            color: rgba(230, 233, 240, 0.8);
             max-width: 600px;
             margin-bottom: 30px;
         }
@@ -114,34 +104,56 @@
         .code-window {
             background-color: var(--bg-secondary);
             border-radius: 10px;
-            padding: 20px;
-            margin-top: 30px;
+            padding: 25px;
+            margin: 30px 0;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(191, 155, 48, 0.2);
+        }
+
+        .code-window-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(191, 155, 48, 0.2);
+        }
+
+        .code-window-title {
+            color: var(--gold-accent);
+            font-size: 0.9rem;
+            font-weight: 600;
         }
 
         .code-window pre {
             font-family: 'Fira Code', monospace;
-            color: var(--accent-color);
+            color: var(--text-primary);
             font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 25px;
-            background-color: var(--accent-color);
-            color: white;
+            padding: 14px 30px;
+            background-color: var(--gold-accent);
+            color: var(--bg-primary);
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
-            background-color: var(--accent-hover);
+            background-color: #d4af37;
+            transform: translateY(-2px);
         }
 
         .features {
             background-color: var(--bg-secondary);
             padding: 100px 0;
+            border-top: 2px solid var(--gold-accent);
+            border-bottom: 2px solid var(--gold-accent);
         }
 
         .feature-grid {
@@ -152,26 +164,35 @@
 
         .feature {
             background-color: var(--bg-primary);
-            padding: 30px;
+            padding: 40px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
+            border: 1px solid rgba(191, 155, 48, 0.2);
         }
 
         .feature:hover {
             transform: translateY(-10px);
+            border-color: var(--gold-accent);
         }
 
         .feature i {
             font-size: 3rem;
-            color: var(--accent-color);
+            color: var(--gold-accent);
             margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
         }
 
         footer {
             background-color: var(--bg-secondary);
             padding: 50px 0;
             text-align: center;
+            color: rgba(230, 233, 240, 0.8);
         }
 
         @media (max-width: 768px) {
@@ -186,15 +207,12 @@
     </style>
 </head>
 <body>
-    <div class="noise-overlay"></div>
-
     <header>
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">NovaSyntax</a>
                 <nav>
                     <a href="#features">Features</a>
-                    <a href="#code">Code</a>
                     <a href="https://github.com/bniladridas/NovaSyntax" target="_blank">GitHub</a>
                 </nav>
             </div>
@@ -208,6 +226,9 @@
                 <p>NovaSyntax is a cutting-edge programming language designed from the ground up, focusing on simplicity, expressiveness, and modern programming paradigms.</p>
                 
                 <div class="code-window">
+                    <div class="code-window-header">
+                        <span class="code-window-title">Example Code</span>
+                    </div>
                     <pre>
 # Function Declaration
 func add(x, y) {
@@ -218,6 +239,38 @@ func add(x, y) {
 let message = "Hello, NovaSyntax!"
 let result = add(10, 32)
                     </pre>
+                </div>
+
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <span class="code-window-title">C/C++ CI Workflow</span>
+                    </div>
+                    <pre>
+name: C/C++ CI
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake libgtest-dev
+        cd /usr/src/gtest
+        sudo cmake CMakeLists.txt
+        sudo make
+        sudo cp lib/libgtest.a lib/libgtest_main.a /usr/lib/
+    - name: configure
+      run: ./configure.sh
+    - name: make
+      run: cd build && make
+    - name: run tests
+      run: cd build && ./novasyntax_test</pre>
                 </div>
 
                 <a href="https://github.com/bniladridas/NovaSyntax" class="btn" target="_blank">Explore Project</a>
