@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaSyntax - A Modern Programming Language</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f4f6f7;
+            --text-color: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+
+        .feature {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .code-sample {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        pre {
+            font-family: 'Courier New', monospace;
+            color: var(--primary-color);
+        }
+
+        .cta {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>NovaSyntax</h1>
+            <p class="tagline">A Modern, Expressive Programming Language Built from Scratch</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="features">
+            <div class="feature">
+                <h3>Custom Lexer</h3>
+                <p>Advanced tokenization with support for complex literals, scientific notation, and multiple number bases.</p>
+            </div>
+            <div class="feature">
+                <h3>Robust Parser</h3>
+                <p>Comprehensive parsing with error recovery, supporting function and variable declarations.</p>
+            </div>
+            <div class="feature">
+                <h3>Modern Design</h3>
+                <p>Clean syntax inspired by modern programming languages, focusing on readability and expressiveness.</p>
+            </div>
+        </section>
+
+        <section class="code-sample">
+            <h2>Sample NovaSyntax Code</h2>
+            <pre>
+# Function Declaration
+func add(x, y) {
+    return x + y
+}
+
+# Variable Declarations
+let message = "Hello, NovaSyntax!"
+let result = add(10, 32)
+            </pre>
+        </section>
+
+        <section class="cta">
+            <a href="https://github.com/bniladridas/NovaSyntax" class="btn">Explore on GitHub</a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 NovaSyntax. A custom programming language project.</p>
+        </div>
+    </footer>
+</body>
+</html>
