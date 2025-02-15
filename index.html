@@ -1,330 +1,196 @@
+<img width="60" height="60" src="https://img.icons8.com/external-flat-juicy-fish/60/external-colour-film-making-flat-flat-juicy-fish.png" alt="external-colour-film-making-flat-flat-juicy-fish" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NovaSyntax - Reimagining Programming Languages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace Community Church - Urban Sanctuary</title>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="favicon/favicon-48x48.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="https://img.icons8.com/external-flat-juicy-fish/60/external-colour-film-making-flat-flat-juicy-fish.png" type="image/png" />
+    <link rel="icon" href="https://img.icons8.com/external-flat-juicy-fish/60/external-colour-film-making-flat-flat-juicy-fish.png" type="image/png" />
+    
     <style>
         :root {
-            --bg-primary: #1a1d3f;
-            --bg-secondary: #232857;
-            --text-primary: #e6e9f0;
-            --accent-color: #3b82f6;
-            --accent-hover: #60a5fa;
-            --gold-accent: #bf9b30;
+            --sunset-pink: #ffd4d4;
+            --deep-purple: #2d1832;
+            --urban-gray: #2c2c2c;
+            --warm-light: #fff5eb;
+            --accent-gold: #ffc107;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        html, body {
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-
-        @keyframes backgroundSlide {
-            from {
-                background-position: 0 0;
-            }
-            to {
-                background-position: 200px 200px;
-            }
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--warm-light);
+            color: var(--urban-gray);
+            line-height: 1.7;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
-            width: 100%;
         }
 
         header {
+            background-color: rgba(45, 24, 50, 0.95);
             position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
-            background-color: rgba(26, 29, 63, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            border-bottom: 2px solid var(--gold-accent);
+            z-index: 1000;
+            transition: 0.3s ease;
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 20px 0;
         }
 
         .logo {
+            color: var(--warm-light);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-svg {
-            width: 120px;
-            height: 60px;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover .logo-svg {
-            transform: scale(1.05);
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
         nav a {
-            color: var(--text-primary);
+            color: var(--warm-light);
             text-decoration: none;
-            margin-left: 20px;
-            transition: color 0.3s ease;
+            margin-left: 30px;
             font-weight: 500;
-            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: var(--gold-accent);
+            color: var(--accent-gold);
         }
 
         .hero {
-            min-height: 100vh;
+            height: 100vh;
+            background: linear-gradient(rgba(45, 24, 50, 0.7), rgba(45, 24, 50, 0.7)), url('/api/placeholder/1920/1080') center/cover;
             display: flex;
             align-items: center;
-            position: relative;
-            padding-top: 80px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3Cpattern id='x-pattern' x='0' y='0' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Cpath d='M5 5 L35 35 M35 5 L5 35' stroke='%232a305f' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='20' cy='20' r='1.5' fill='%23bf9b30' opacity='0.5'/%3E%3C/pattern%3E%3ClinearGradient id='fade' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%231a1d3f' stop-opacity='0.9'/%3E%3Cstop offset='100%25' stop-color='%231a1d3f' stop-opacity='0.95'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' width='200' height='200' fill='url(%23x-pattern)'/%3E%3Crect x='0' y='0' width='200' height='200' fill='url(%23fade)'/%3E%3C/svg%3E");
-            background-repeat: repeat;
-            background-size: 200px 200px;
-            animation: backgroundSlide 30s linear infinite;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(26, 29, 63, 0.9) 0%, rgba(26, 29, 63, 0.8) 100%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
             text-align: center;
-            width: 100%;
+            color: var(--warm-light);
         }
 
         .hero h1 {
             font-size: 3.5rem;
-            color: var(--text-primary);
             margin-bottom: 20px;
-            letter-spacing: 1px;
             line-height: 1.2;
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: rgba(230, 233, 240, 0.8);
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 30px;
-            line-height: 1.6;
-        }
-
-        .code-window {
-            background-color: var(--bg-secondary);
-            border-radius: 10px;
-            padding: 25px;
-            margin: 30px auto;
-            max-width: 800px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(191, 155, 48, 0.2);
-            overflow-x: auto;
-        }
-
-        .code-window pre {
-            font-family: 'Fira Code', monospace;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            white-space: pre-wrap;
-            word-wrap: break-word;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 30px;
-            background-color: var(--gold-accent);
-            color: var(--bg-primary);
+            background-color: var(--accent-gold);
+            color: var(--deep-purple);
+            padding: 15px 35px;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            margin: 0 10px;
+            font-weight: 700;
+            transition: transform 0.3s ease;
         }
 
         .btn:hover {
-            background-color: #d4af37;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
-        .features {
-            background-color: var(--bg-secondary);
+        section {
             padding: 100px 0;
-            border-top: 2px solid var(--gold-accent);
-            border-bottom: 2px solid var(--gold-accent);
         }
 
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .feature {
-            background-color: var(--bg-primary);
-            padding: 40px;
-            border-radius: 10px;
+        .section-title {
             text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--deep-purple);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .service {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            border: 1px solid rgba(191, 155, 48, 0.2);
         }
 
-        .feature:hover {
+        .service:hover {
             transform: translateY(-10px);
-            border-color: var(--gold-accent);
         }
 
-        .feature i {
-            font-size: 3rem;
-            color: var(--gold-accent);
+        .service i {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
             margin-bottom: 20px;
         }
 
-        .feature h3 {
-            color: var(--text-primary);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+        .event-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .event {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact {
+            background-color: var(--deep-purple);
+            color: var(--warm-light);
+            text-align: center;
         }
 
         footer {
-            background-color: var(--bg-secondary);
-            padding: 50px 0;
+            background-color: var(--urban-gray);
+            color: var(--warm-light);
             text-align: center;
-            color: rgba(230, 233, 240, 0.8);
+            padding: 20px 0;
         }
 
-        /* Mobile Responsiveness */
-        @media screen and (max-width: 1024px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .feature-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media screen and (max-width: 768px) {
+        @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                align-items: center;
-                padding: 15px 0;
+                text-align: center;
             }
 
             nav {
-                margin-top: 15px;
+                margin-top: 20px;
             }
 
             nav a {
                 margin: 0 10px;
             }
 
-            .hero {
-                padding-top: 100px;
-            }
-
             .hero h1 {
                 font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-                padding: 0 15px;
-            }
-
-            .code-window {
-                margin: 20px 15px;
-                padding: 15px;
-            }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .feature {
-                padding: 30px;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 0.9rem;
-            }
-
-            .btn {
-                padding: 12px 25px;
-                margin: 0 5px;
-            }
-
-            .logo-svg {
-                width: 100px;
-                height: 50px;
             }
         }
     </style>
@@ -333,130 +199,93 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">
-                    <svg class="logo-svg" width="120" height="60" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Background shape -->
-                        <rect x="0" y="0" width="200" height="100" fill="none"/>
-                        
-                        <!-- Main N shape -->
-                        <path d="M40 75 L40 25 L70 75 L70 25" 
-                              stroke="#3b82f6" 
-                              stroke-width="8" 
-                              stroke-linecap="round" 
-                              fill="none"/>
-                        
-                        <!-- Syntax elements -->
-                        <path d="M90 35 L160 35" 
-                              stroke="#bf9b30" 
-                              stroke-width="4" 
-                              stroke-linecap="round"/>
-                        
-                        <path d="M90 50 L140 50" 
-                              stroke="#bf9b30" 
-                              stroke-width="4" 
-                              stroke-linecap="round"/>
-                        
-                        <path d="M90 65 L150 65" 
-                              stroke="#bf9b30" 
-                              stroke-width="4" 
-                              stroke-linecap="round"/>
-                        
-                        <!-- Decorative code brackets -->
-                        <path d="M25 15 L15 25 L25 35" 
-                              stroke="#bf9b30" 
-                              stroke-width="3" 
-                              stroke-linecap="round" 
-                              fill="none"/>
-                        
-                        <path d="M175 65 L185 75 L175 85" 
-                              stroke="#bf9b30" 
-                              stroke-width="3" 
-                              stroke-linecap="round" 
-                              fill="none"/>
-                    </svg>
-                </a>
+                <a href="#" class="logo">GRACE URBAN</a>
                 <nav>
-                    <a href="#features">Features</a>
-                    <a href="https://github.com/bniladridas/NovaSyntax" target="_blank">GitHub</a>
+                    <a href="#welcome"><i class="fas fa-home"></i> Home</a>
+                    <a href="#about"><i class="fas fa-heart"></i> About</a>
+                    <a href="#services"><i class="fas fa-hands-helping"></i> Services</a>
+                    <a href="#events"><i class="fas fa-calendar"></i> Events</a>
+                    <a href="#contact" class="btn">Connect</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Reimagining Programming Languages</h1>
-                <p>NovaSyntax is a cutting-edge programming language designed from the ground up, focusing on simplicity, expressiveness, and modern programming paradigms.</p>
-                
-                <div class="code-window">
-                    <pre>
-# Function Declaration
-func add(x, y) {
-    return x + y
-}
-
-# Modern Variable Syntax
-let message = "Hello, NovaSyntax!"
-let result = add(10, 32)
-                    </pre>
-                </div>
-
-                <div class="code-window">
-                    <pre>
-name: C/C++ CI
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Install Dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y cmake libgtest-dev
-    - name: configure
-      run: ./configure.sh
-    - name: make
-      run: cd build && make
-    - name: run tests
-      run: cd build && ./novasyntax_test</pre>
-                </div>
-
-                <a href="https://github.com/bniladridas/NovaSyntax" class="btn" target="_blank">Explore Project</a>
+    <main>
+        <section id="welcome" class="hero">
+            <div class="container">
+                <h1>Find Your Urban Sanctuary</h1>
+                <p>In the heart of the city, discover a community where faith meets modern life. Join us in creating meaningful connections and spiritual growth.</p>
+                <a href="#services" class="btn">Join Our Community</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="features" class="features">
-        <div class="container">
-            <div class="feature-grid">
-                <div class="feature">
-                    <i class="fas fa-code"></i>
-                    <h3>Modern Syntax</h3>
-                    <p>Clean, intuitive language design that prioritizes readability and developer experience.</p>
+        <section id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Vision</h2>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-puzzle-piece"></i>
-                    <h3>Flexible Parsing</h3>
-                    <p>Robust lexer and parser with advanced error recovery and comprehensive tokenization.</p>
+                <p>At Grace Urban, we believe in creating a spiritual haven within our bustling city. Our community embraces both tradition and contemporary life, providing a space where everyone can find their path to faith and connection.</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Community & Worship</h2>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Performance Focus</h3>
-                    <p>Designed with performance in mind, leveraging modern C++ implementation techniques.</p>
+                <div class="service-grid">
+                    <div class="service">
+                        <i class="fas fa-pray"></i>
+                        <h3>Sunday Gathering</h3>
+                        <p>Contemporary worship services every Sunday at 10:00 AM, blending traditional values with modern expression.</p>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <h3>City Outreach</h3>
+                        <p>Making a difference in our urban community through active engagement and support programs.</p>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-users"></i>
+                        <h3>Urban Groups</h3>
+                        <p>Connect with others in your neighborhood through our weekly small group meetings.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="events">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Upcoming Events</h2>
+                </div>
+                <div class="event-list">
+                    <div class="event">
+                        <h3><i class="fas fa-music"></i> Night of Worship</h3>
+                        <p>Every Friday at 7:00 PM - Experience contemporary worship in our urban sanctuary.</p>
+                    </div>
+                    <div class="event">
+                        <h3><i class="fas fa-utensils"></i> Community Dinner</h3>
+                        <p>Third Saturday monthly - Share a meal and stories with your urban family.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Connect With Us</h2>
+                </div>
+                <p>We'd love to hear from you. Reach out for prayer requests or more information.</p>
+                <a href="https://linkedin.com/in/bniladridas/" class="btn">Send Message</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 NovaSyntax. An experimental programming language project.</p>
+            <p>&copy; 2024 Grace Urban. All rights reserved.</p>
         </div>
     </footer>
 </body>
