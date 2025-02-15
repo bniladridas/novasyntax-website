@@ -1,23 +1,19 @@
-<img width="60" height="60" src="https://img.icons8.com/external-flat-juicy-fish/60/external-colour-film-making-flat-flat-juicy-fish.png" alt="external-colour-film-making-flat-flat-juicy-fish" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grace Community Church - Urban Sanctuary</title>
+    <title>Urban Faith | Modern Community</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" href="https://img.icons8.com/external-flat-juicy-fish/60/external-colour-film-making-flat-flat-juicy-fish.png" type="image/png" />
-    <link rel="icon" href="https://img.icons8.com/external-flat-juicy-fish/60/external-colour-film-making-flat-flat-juicy-fish.png" type="image/png" />
     
     <style>
         :root {
-            --sunset-pink: #ffd4d4;
-            --deep-purple: #2d1832;
-            --urban-gray: #2c2c2c;
-            --warm-light: #fff5eb;
-            --accent-gold: #ffc107;
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --gray: #f3f3f3;
+            --accent: #ff6b6b;
         }
 
         * {
@@ -27,266 +23,279 @@
         }
 
         body {
-            font-family: 'DM Sans', sans-serif;
-            background-color: var(--warm-light);
-            color: var(--urban-gray);
-            line-height: 1.7;
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.5;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
         }
 
-        header {
-            background-color: rgba(45, 24, 50, 0.95);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: 0.3s ease;
-        }
-
-        .header-content {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: var(--white);
+            z-index: 1000;
         }
 
-        .logo {
-            color: var(--warm-light);
-            text-decoration: none;
+        .brand {
             font-size: 1.5rem;
             font-weight: 700;
-        }
-
-        nav a {
-            color: var(--warm-light);
+            color: var(--black);
             text-decoration: none;
-            margin-left: 30px;
-            font-weight: 500;
-            transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--accent-gold);
+        .menu {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .menu a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .menu a:hover {
+            color: var(--accent);
         }
 
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(45, 24, 50, 0.7), rgba(45, 24, 50, 0.7)), url('/api/placeholder/1920/1080') center/cover;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
-            text-align: center;
-            color: var(--warm-light);
+            padding-top: 5rem;
+        }
+
+        .hero-content {
+            padding-right: 4rem;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+        .hero-image {
+            position: relative;
+            height: 100%;
+            background: var(--gray);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .btn {
-            display: inline-block;
-            background-color: var(--accent-gold);
-            color: var(--deep-purple);
-            padding: 15px 35px;
-            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--black);
+            color: var(--white);
+            padding: 1rem 2rem;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 500;
+            border-radius: 0;
             transition: transform 0.3s ease;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
-        section {
-            padding: 100px 0;
+        .services {
+            padding: 8rem 0;
+            background: var(--gray);
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--deep-purple);
-        }
-
-        .service-grid {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
+            gap: 2rem;
+            margin-top: 4rem;
         }
 
-        .service {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
         }
 
-        .service:hover {
-            transform: translateY(-10px);
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
         }
 
-        .service i {
-            font-size: 2.5rem;
-            color: var(--accent-gold);
-            margin-bottom: 20px;
-        }
-
-        .event-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .event {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent);
+            opacity: 0.2;
         }
 
         .contact {
-            background-color: var(--deep-purple);
-            color: var(--warm-light);
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
         }
 
-        footer {
-            background-color: var(--urban-gray);
-            color: var(--warm-light);
-            text-align: center;
-            padding: 20px 0;
+        .contact-form {
+            padding: 4rem;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .contact-info {
+            padding: 4rem;
+            background: var(--gray);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--white);
+            color: var(--white);
+            font-family: inherit;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--black);
+            font-size: 1.5rem;
         }
 
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
+            .hero, .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 2rem;
                 text-align: center;
             }
 
-            nav {
-                margin-top: 20px;
+            .menu {
+                display: none;
             }
 
-            nav a {
-                margin: 0 10px;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
+            .contact-form, .contact-info {
+                padding: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <nav>
         <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">GRACE URBAN</a>
-                <nav>
-                    <a href="#welcome"><i class="fas fa-home"></i> Home</a>
-                    <a href="#about"><i class="fas fa-heart"></i> About</a>
-                    <a href="#services"><i class="fas fa-hands-helping"></i> Services</a>
-                    <a href="#events"><i class="fas fa-calendar"></i> Events</a>
-                    <a href="#contact" class="btn">Connect</a>
-                </nav>
+            <a href="#" class="brand">URBAN FAITH</a>
+            <div class="menu">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#community">Community</a>
+                <a href="https://bsky.app/profile/bniladridas.bsky.social" class="btn">Connect →</a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <section id="welcome" class="hero">
-            <div class="container">
-                <h1>Find Your Urban Sanctuary</h1>
-                <p>In the heart of the city, discover a community where faith meets modern life. Join us in creating meaningful connections and spiritual growth.</p>
-                <a href="#services" class="btn">Join Our Community</a>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Vision</h2>
-                </div>
-                <p>At Grace Urban, we believe in creating a spiritual haven within our bustling city. Our community embraces both tradition and contemporary life, providing a space where everyone can find their path to faith and connection.</p>
-            </div>
-        </section>
-
-        <section id="services">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Community & Worship</h2>
-                </div>
-                <div class="service-grid">
-                    <div class="service">
-                        <i class="fas fa-pray"></i>
-                        <h3>Sunday Gathering</h3>
-                        <p>Contemporary worship services every Sunday at 10:00 AM, blending traditional values with modern expression.</p>
-                    </div>
-                    <div class="service">
-                        <i class="fas fa-hand-holding-heart"></i>
-                        <h3>City Outreach</h3>
-                        <p>Making a difference in our urban community through active engagement and support programs.</p>
-                    </div>
-                    <div class="service">
-                        <i class="fas fa-users"></i>
-                        <h3>Urban Groups</h3>
-                        <p>Connect with others in your neighborhood through our weekly small group meetings.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="events">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Upcoming Events</h2>
-                </div>
-                <div class="event-list">
-                    <div class="event">
-                        <h3><i class="fas fa-music"></i> Night of Worship</h3>
-                        <p>Every Friday at 7:00 PM - Experience contemporary worship in our urban sanctuary.</p>
-                    </div>
-                    <div class="event">
-                        <h3><i class="fas fa-utensils"></i> Community Dinner</h3>
-                        <p>Third Saturday monthly - Share a meal and stories with your urban family.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Connect With Us</h2>
-                </div>
-                <p>We'd love to hear from you. Reach out for prayer requests or more information.</p>
-                <a href="https://linkedin.com/in/bniladridas/" class="btn">Send Message</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Grace Urban. All rights reserved.</p>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your Place<br>in Our Story</h1>
+            <p>Join a modern community where faith meets real life. Experience authentic connections and meaningful growth.</p>
+            <a href="#services" class="btn">Explore Our Community →</a>
         </div>
-    </footer>
+        <div class="hero-image">
+            <img src="/api/placeholder/800/800" alt="Community gathering">
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="number">01</div>
+                    <h3>Sunday Experience</h3>
+                    <p>Contemporary worship and relevant messages every Sunday at 10AM.</p>
+                </div>
+                <div class="service-card">
+                    <div class="number">02</div>
+                    <h3>Community Groups</h3>
+                    <p>Connect with others in your neighborhood throughout the week.</p>
+                </div>
+                <div class="service-card">
+                    <div class="number">03</div>
+                    <h3>Social Impact</h3>
+                    <p>Making a difference in our city through active community service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message →</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h2>Visit Us</h2>
+            <p>123 Urban Street<br>City, State 12345</p>
+            <p>hello@urbanfaith.com<br>(555) 123-4567</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.onload = function() {
+            window.scrollTo(0, 800);
+        };
+    </script>
+    <script>
+        window.onload = function() {
+            window.scrollTo(0, 800);
+        };
+    </script>
 </body>
 </html>
